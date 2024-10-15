@@ -40,7 +40,7 @@ function App() {
     };
 
     setSonuc(yeniSonuc);
-    setHesaplamalar([...hesaplamalar, yeniSonuc]);
+    setHesaplamalar([...hesaplamalar, yeniSonuc]); // Yeni sonucu listenin sonuna ekle
     setFiyat('');
   };
 
@@ -100,6 +100,7 @@ function App() {
             <table>
               <thead>
                 <tr>
+                  <th>Sıra</th>
                   <th>KDV Oranı</th>
                   <th>KDV Hariç Fiyat</th>
                   <th>KDV Tutarı</th>
@@ -110,6 +111,7 @@ function App() {
               <tbody>
                 {hesaplamalar.map((h, index) => (
                   <tr key={index}>
+                    <td data-label="Sıra">{index + 1}</td>
                     <td data-label="KDV Oranı">%{h.kdvOrani}</td>
                     <td data-label="KDV Hariç Fiyat">{h.kdvHaricFiyat} TL</td>
                     <td data-label="KDV Tutarı">{h.kdvTutari} TL</td>
