@@ -96,40 +96,37 @@ function App() {
       {hesaplamalar.length > 0 && (
         <div className="hesaplamalar-listesi">
           <h2>Hesaplamalar Listesi</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>KDV Oranı</th>
-                <th>KDV Hariç Fiyat</th>
-                <th>KDV Tutarı</th>
-                <th>Turizm Vergisi</th>
-                <th>Toplam Fiyat</th>
-              </tr>
-            </thead>
-            <tbody>
-              {hesaplamalar.map((h, index) => (
-                <tr key={index}>
-                  <td data-label="KDV Oranı">%{h.kdvOrani}</td>
-                  <td data-label="KDV Hariç Fiyat">{h.kdvHaricFiyat} TL</td>
-                  <td data-label="KDV Tutarı">{h.kdvTutari} TL</td>
-                  <td data-label="Turizm Vergisi">{h.turizmVergisi} TL</td>
-                  <td data-label="Toplam Fiyat">{h.toplamFiyat} TL</td>
+          <div className="responsive-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>KDV Oranı</th>
+                  <th>KDV Hariç Fiyat</th>
+                  <th>KDV Tutarı</th>
+                  <th>Turizm Vergisi</th>
+                  <th>Toplam Fiyat</th>
                 </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colSpan="5" className="toplam-baslik">Toplamlar</td>
-              </tr>
-              <tr>
-                <td data-label="KDV Oranı">-</td>
-                <td data-label="KDV Hariç Fiyat">{toplamKDVHaricFiyat} TL</td>
-                <td data-label="KDV Tutarı">{toplamKDV} TL</td>
-                <td data-label="Turizm Vergisi">{toplamTurizmVergisi} TL</td>
-                <td data-label="Toplam Fiyat">{genelToplam} TL</td>
-              </tr>
-            </tfoot>
-          </table>
+              </thead>
+              <tbody>
+                {hesaplamalar.map((h, index) => (
+                  <tr key={index}>
+                    <td data-label="KDV Oranı">%{h.kdvOrani}</td>
+                    <td data-label="KDV Hariç Fiyat">{h.kdvHaricFiyat} TL</td>
+                    <td data-label="KDV Tutarı">{h.kdvTutari} TL</td>
+                    <td data-label="Turizm Vergisi">{h.turizmVergisi} TL</td>
+                    <td data-label="Toplam Fiyat">{h.toplamFiyat} TL</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="toplamlar">
+            <h3>Toplamlar</h3>
+            <p><strong>KDV Hariç Fiyat:</strong> {toplamKDVHaricFiyat} TL</p>
+            <p><strong>KDV Tutarı:</strong> {toplamKDV} TL</p>
+            <p><strong>Turizm Vergisi:</strong> {toplamTurizmVergisi} TL</p>
+            <p><strong>Genel Toplam:</strong> {genelToplam} TL</p>
+          </div>
         </div>
       )}
     </div>
