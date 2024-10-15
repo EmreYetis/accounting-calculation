@@ -1,0 +1,172 @@
+.muhasebe-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+}
+
+.hesaplama-formu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.sonuc {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sonuc h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.sonuc p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .hesaplama-formu {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  input, select {
+    flex: 1;
+  }
+
+  button {
+    width: auto;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .sonuc h2 {
+    font-size: 24px;
+  }
+
+  .sonuc p {
+    font-size: 18px;
+  }
+}
+/* Mevcut CSS'e ek olarak */
+
+.hesaplamalar-listesi {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+.toplam-baslik {
+  text-align: center;
+  background-color: #e6e6e6;
+}
+
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    margin-bottom: 10px;
+  }
+  
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+  
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+/* Mevcut CSS'e ek olarak */
+
+.hesaplama-formu label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hesaplama-formu input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .hesaplama-formu label {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
